@@ -1,12 +1,10 @@
 import { View, Text, Image } from "react-native";
 import React from "react";
-import { StyleSheet } from "react-native";
-import restaurants from "../../assets/data/restaurants.json";
 import { Ionicons } from "@expo/vector-icons";
-const restaurant = restaurants[0];
-export default function RestaurantDetailPage() {
+import styles from "./styles";
+export default function Header({ restaurant }) {
   return (
-    <View style={styles.page}>
+    <View>
       <Image
         source={{
           uri: restaurant.image,
@@ -21,6 +19,7 @@ export default function RestaurantDetailPage() {
           style={styles.imageIcon}
         ></Ionicons>
       </View>
+
       <View style={styles.container}>
         <View style={styles.restaurantDetail}>
           <Text style={styles.title}>{restaurant.name}</Text>
@@ -33,30 +32,3 @@ export default function RestaurantDetailPage() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  image: {
-    width: "100%",
-    aspectRatio: 5 / 3,
-  },
-  iconContainer: {
-    position: "absolute",
-    top: 40,
-    left: 10,
-  },
-  page: {
-    flex: 1,
-  },
-  title: {
-    fontSize: 40,
-    fontWeight: "600",
-    marginVertical: 10,
-  },
-  subtitle: {
-    fontSize: 15,
-    color: "grey",
-  },
-  container: {
-    paddingHorizontal: 10,
-  },
-});
