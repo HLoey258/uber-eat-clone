@@ -14,5 +14,6 @@ export default function RestaurantDetailPage() {
         renderItem={({ item }) => <DishListItem dish={item}></DishListItem>}
       ></FlatList>
     </View>
+    // cmcm
   );
 }
