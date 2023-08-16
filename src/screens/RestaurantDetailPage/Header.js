@@ -29,6 +29,7 @@ export default function Header({ restaurant }) {
           </Text>
         </View>
       </View>
+      <Text style={styles.headerTitle}>Menu</Text>
     </View>
   );
 }

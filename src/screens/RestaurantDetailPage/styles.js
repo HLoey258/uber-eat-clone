@@ -28,4 +28,10 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
     padding: 20,
   },
+  headerTitle: {
+    color: "grey",
+    fontSize: 20,
+    paddingTop: 10,
+    paddingLeft: 20,
+  },
 });
