@@ -90,5 +90,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     width: "50%",
     color: "white",
+    // strike
   },
 });
