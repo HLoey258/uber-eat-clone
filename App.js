@@ -3,14 +3,14 @@ import HomeScreen from "./src/screens/HomeScreen/HomeScreen";
 import RestaurantDetailPage from "./src/screens/RestaurantDetailPage/RestaurantDetailPage";
 import { StatusBar } from "expo-status-bar";
 import DishDetailScreen from "./src/screens/DishDetailScreen/DishDetailScreen";
-import BasketItem from "./src/components/BasketItem/BasketItem";
+import BasketScreen from "./src/screens/BasketScreen/BasketScreen";
 export default function App() {
   return (
     <View style={styles.container}>
       {/* <HomeScreen></HomeScreen> */}
       {/* <RestaurantDetailPage></RestaurantDetailPage> */}
       {/* <DishDetailScreen></DishDetailScreen> */}
-      <BasketItem></BasketItem>
+      <BasketScreen></BasketScreen>
       <StatusBar style="light"></StatusBar>
     </View>
   );
