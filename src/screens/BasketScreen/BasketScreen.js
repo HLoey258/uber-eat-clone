@@ -7,22 +7,12 @@ import restaurants from "../../../assets/data/restaurants.json";
 const dishes = restaurants[0].dishes[0];
 
 export default function DishDetailScreen() {
-  const [quantity, setQuantity] = useState(0);
-  const handlePlus = () => {
-    return setQuantity(quantity + 1);
-  };
-  const handleMinus = () => {
-    if (quantity >= 1) return setQuantity(quantity - 1);
-  };
-  const getTotal = () => {
-    return dishes.price * quantity;
-  };
   return (
     <View style={styles.page}>
-      <Text style={styles.title}>basket</Text>
+      <Text style={styles.name}>basket</Text>
       <Text style={styles.decription}>{dishes.description}</Text>
-      <Text style={styles.separator}> </Text>
 
+      <Text style={styles.separator}> </Text>
       <View
         style={{
           flexDirection: "row",
@@ -30,25 +20,10 @@ export default function DishDetailScreen() {
           justifyContent: "center",
           marginTop: 50,
         }}
-      >
-        <AntDesign
-          name="minuscircleo"
-          size={60}
-          color={"black"}
-          onPress={handleMinus}
-        ></AntDesign>
-        <Text style={styles.quantity}>{quantity}</Text>
-        <AntDesign
-          name="pluscircleo"
-          size={60}
-          color={"black"}
-          onPress={handlePlus}
-        ></AntDesign>
-      </View>
+      ></View>
       <View style={styles.basket}>
-        <Text style={styles.basketDetail}>
-          Add {quantity} to basket (${getTotal()})
-        </Text>
+        <Text style={styles.basketDetail}>Create Order</Text>
+        {/* ssss */}
       </View>
     </View>
   );
@@ -90,6 +65,5 @@ const styles = StyleSheet.create({
     fontSize: 15,
     width: "50%",
     color: "white",
-    // strike sda
   },
 });
