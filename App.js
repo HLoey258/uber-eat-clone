@@ -4,13 +4,15 @@ import RestaurantDetailPage from "./src/screens/RestaurantDetailPage/RestaurantD
 import { StatusBar } from "expo-status-bar";
 import DishDetailScreen from "./src/screens/DishDetailScreen/DishDetailScreen";
 import BasketScreen from "./src/screens/BasketScreen/BasketScreen";
+import OrderListItem from "./src/components/OrderListItem/OrderListItem";
 export default function App() {
   return (
     <View style={styles.container}>
       {/* <HomeScreen></HomeScreen> */}
       {/* <RestaurantDetailPage></RestaurantDetailPage> */}
       {/* <DishDetailScreen></DishDetailScreen> */}
-      <BasketScreen></BasketScreen>
+      {/* <BasketScreen></BasketScreen> */}
+      <OrderListItem></OrderListItem>
       <StatusBar style="light"></StatusBar>
     </View>
   );

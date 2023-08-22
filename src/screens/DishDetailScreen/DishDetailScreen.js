@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, StatusBar } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import React, { useState } from "react";
 
@@ -7,6 +7,7 @@ import restaurants from "../../../assets/data/restaurants.json";
 const dishes = restaurants[0].dishes[0];
 
 export default function DishDetailScreen() {
+  // function handle plus and minus button
   const [quantity, setQuantity] = useState(0);
   const handlePlus = () => {
     return setQuantity(quantity + 1);
@@ -17,6 +18,7 @@ export default function DishDetailScreen() {
   const getTotal = () => {
     return dishes.price * quantity;
   };
+  // end function
   return (
     <View style={styles.page}>
       <Text style={styles.title}>{dishes.name}</Text>
