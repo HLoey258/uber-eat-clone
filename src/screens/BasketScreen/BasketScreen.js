@@ -1,17 +1,31 @@
-import { View, Text, StyleSheet, StatusBar } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
-import React, { useState } from "react";
+import { View, Text, StyleSheet, FlatList } from "react-native";
+import React from "react";
 
 import restaurants from "../../../assets/data/restaurants.json";
-
-const dishes = restaurants[0].dishes[0];
+const restaurant = restaurants[0];
+const BasketDishItem = ({ basketDish }) => {
+  return (
+    <View style={styles.row}>
+      <View style={styles.quantityContainer}>
+        <Text>1</Text>
+      </View>
+      <Text style={styles.dishName}>{basketDish.name}</Text>
+      <Text style={{ marginLeft: "auto" }}>${basketDish.price}</Text>
+    </View>
+  );
+};
 
 export default function DishDetailScreen() {
   return (
     <View style={styles.page}>
-      <Text style={styles.name}>basket</Text>
-      <Text style={styles.decription}>{dishes.description}</Text>
-
+      <Text style={styles.name}>{restaurant.name}</Text>
+      <Text style={styles.title}>Your item</Text>
+      <FlatList
+        data={restaurant.dishes}
+        renderItem={({ item }) => (
+          <BasketDishItem basketDish={item}></BasketDishItem>
+        )}
+      ></FlatList>
       <Text style={styles.separator}> </Text>
       <View
         style={{
@@ -36,14 +50,19 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     padding: 15,
   },
-  title: {
+  name: {
     fontSize: 35,
     fontWeight: "bold",
-    marginVertical: 10,
   },
-  decription: {
-    fontSize: 16,
-    color: "grey",
+  title: {
+    fontWeight: "bold",
+    fontSize: 15,
+  },
+  row: {
+    marginTop: 20,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   },
   separator: {
     marginVertical: 25,
@@ -65,5 +84,15 @@ const styles = StyleSheet.create({
     fontSize: 15,
     width: "50%",
     color: "white",
+  },
+  quantityContainer: {
+    backgroundColor: "lightgrey",
+    paddingVertical: 3,
+    paddingHorizontal: 7,
+    marginRight: 7,
+    borderRadius: 3,
+  },
+  dishName: {
+    fontWeight: "500",
   },
 });
