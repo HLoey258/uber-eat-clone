@@ -5,6 +5,7 @@ import { StatusBar } from "expo-status-bar";
 import DishDetailScreen from "./src/screens/DishDetailScreen/DishDetailScreen";
 import BasketScreen from "./src/screens/BasketScreen/BasketScreen";
 import OrderListItem from "./src/components/OrderListItem/OrderListItem";
+import OrderLish from "./src/screens/OrderList/OrderLish";
 export default function App() {
   return (
     <View style={styles.container}>
@@ -12,7 +13,8 @@ export default function App() {
       {/* <RestaurantDetailPage></RestaurantDetailPage> */}
       {/* <DishDetailScreen></DishDetailScreen> */}
       {/* <BasketScreen></BasketScreen> */}
-      <OrderListItem></OrderListItem>
+      {/* <OrderListItem></OrderListItem> */}
+      <OrderLish></OrderLish>
       <StatusBar style="light"></StatusBar>
     </View>
   );
