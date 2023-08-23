@@ -10,6 +10,7 @@ export default function OrderListItem({ order }) {
       ></Image>
       <Text>{order.Restaurant.name}</Text>
       <Text>{order.status}</Text>
+      {/* fixing */}
     </View>
   );
 }
