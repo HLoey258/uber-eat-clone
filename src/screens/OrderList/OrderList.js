@@ -4,9 +4,9 @@ import React from "react";
 import order from "../../../assets/data/orders.json";
 import OrderListItem from "../../components/OrderListItem/OrderListItem";
 
-export default function OrderLish() {
+export default function OrderList() {
   return (
-    <View>
+    <View style={{ flex: 1, width: "100%", paddingTop: 50 }}>
       <FlatList
         data={order}
         renderItem={({ item }) => <OrderListItem order={item}></OrderListItem>}
