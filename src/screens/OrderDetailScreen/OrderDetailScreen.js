@@ -17,14 +17,14 @@ const OrderDetailScreenHeader = () => {
         }}
         style={styles.image}
       ></Image>
-      <View style={styles.iconContainer}>
+      {/* <View style={styles.iconContainer}>
         <Ionicons
           name="arrow-back-circle"
           size={35}
           color={"white"}
           style={styles.imageIcon}
         ></Ionicons>
-      </View>
+      </View> */}
       <View style={styles.container}>
         <View style={styles.restaurantDetail}>
           <Text style={styles.title}>{order.Restaurant.name}</Text>
