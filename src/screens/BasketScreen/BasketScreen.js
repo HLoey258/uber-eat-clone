@@ -1,20 +1,8 @@
 import { View, Text, StyleSheet, FlatList } from "react-native";
 import React from "react";
-
 import restaurants from "../../../assets/data/restaurants.json";
+import BasketDishItem from "../../components/BasketDishItem/BasketDishItem";
 const restaurant = restaurants[0];
-const BasketDishItem = ({ basketDish }) => {
-  return (
-    <View style={styles.row}>
-      <View style={styles.quantityContainer}>
-        <Text>1</Text>
-      </View>
-      <Text style={styles.dishName}>{basketDish.name}</Text>
-      <Text style={{ marginLeft: "auto" }}>${basketDish.price}</Text>
-    </View>
-  );
-};
-
 export default function DishDetailScreen() {
   return (
     <View style={styles.page}>
@@ -37,7 +25,6 @@ export default function DishDetailScreen() {
       ></View>
       <View style={styles.basket}>
         <Text style={styles.basketDetail}>Create Order</Text>
-        {/* ssss */}
       </View>
     </View>
   );
@@ -57,12 +44,6 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: "bold",
     fontSize: 15,
-  },
-  row: {
-    marginTop: 20,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
   },
   separator: {
     marginVertical: 25,
@@ -84,15 +65,5 @@ const styles = StyleSheet.create({
     fontSize: 15,
     width: "50%",
     color: "white",
-  },
-  quantityContainer: {
-    backgroundColor: "lightgrey",
-    paddingVertical: 3,
-    paddingHorizontal: 7,
-    marginRight: 7,
-    borderRadius: 3,
-  },
-  dishName: {
-    fontWeight: "500",
   },
 });
