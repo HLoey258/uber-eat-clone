@@ -8,7 +8,7 @@ export default function OrderDetailScreen() {
   return (
     <FlatList
       data={restaurants[0].dishes}
-      ListHeaderComponent={OrderDetailHeader}
+      ListHeaderComponent={OrderDetailHeader} // add Header Component
       renderItem={({ item }) => (
         <BasketDishItem basketDish={item}></BasketDishItem>
       )}

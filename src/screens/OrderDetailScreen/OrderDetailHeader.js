@@ -2,7 +2,7 @@ import { View, Text, Image } from "react-native";
 import React from "react";
 import styles from "./style";
 import orders from "../../../assets/data/orders.json";
-const order = orders[0];
+const order = orders[0]; // clone data for temp
 
 export default function OrderDetailHeader() {
   return (
@@ -13,19 +13,13 @@ export default function OrderDetailHeader() {
         }}
         style={styles.image}
       ></Image>
-      {/* <View style={styles.iconContainer}>
-        <Ionicons
-          name="arrow-back-circle"
-          size={35}
-          color={"white"}
-          style={styles.imageIcon}
-        ></Ionicons>
-      </View> */}
       <View style={styles.container}>
         <View style={styles.restaurantDetail}>
           <Text style={styles.title}>{order.Restaurant.name}</Text>
-          <Text style={styles.subtitle}>{order.status} &#8226; 2 days ago</Text>
-          <Text>Your Items</Text>
+          <Text style={styles.subtitle}>
+            {order.status} &#8226; {order.createdAt}
+          </Text>
+          <Text style={{ fontWeight: "bold", fontSize: 30 }}>Your Order</Text>
         </View>
       </View>
     </View>

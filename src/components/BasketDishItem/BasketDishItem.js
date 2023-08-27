@@ -16,10 +16,13 @@ export default function BasketDishItem({ basketDish }) {
 const styles = StyleSheet.create({
   row: {
     marginTop: 20,
-    paddingHorizontal: 10,
+    marginHorizontal: 20,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+    borderBottomColor: "lightgrey",
+    borderBottomWidth: 1,
+    paddingBottom: 15,
   },
   quantityContainer: {
     backgroundColor: "lightgrey",
