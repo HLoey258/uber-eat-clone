@@ -1,5 +1,5 @@
-import { StyleSheet, FlatList, View } from "react-native";
-import RestaurantItem from "../../components/RestaurantItem";
+import { StyleSheet, FlatList } from "react-native";
+import RestaurantItem from "../../components/RestaurantItem/RestaurantItem";
 import restaurants from "../../../assets/data/restaurants.json";
 export default function HomeScreen() {
   return (

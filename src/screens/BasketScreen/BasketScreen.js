@@ -1,28 +1,20 @@
-import { View, Text, StyleSheet, StatusBar } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
-import React, { useState } from "react";
-
+import { View, Text, StyleSheet, FlatList } from "react-native";
+import React from "react";
 import restaurants from "../../../assets/data/restaurants.json";
-
-const dishes = restaurants[0].dishes[0];
-
+import BasketDishItem from "../../components/BasketDishItem/BasketDishItem";
+const restaurant = restaurants[0];
 export default function DishDetailScreen() {
-  const [quantity, setQuantity] = useState(0);
-  const handlePlus = () => {
-    return setQuantity(quantity + 1);
-  };
-  const handleMinus = () => {
-    if (quantity >= 1) return setQuantity(quantity - 1);
-  };
-  const getTotal = () => {
-    return dishes.price * quantity;
-  };
   return (
     <View style={styles.page}>
-      <Text style={styles.title}>{dishes.name}</Text>
-      <Text style={styles.decription}>{dishes.description}</Text>
+      <Text style={styles.name}>{restaurant.name}</Text>
+      <Text style={styles.title}>Your item</Text>
+      <FlatList
+        data={restaurant.dishes}
+        renderItem={({ item }) => (
+          <BasketDishItem basketDish={item}></BasketDishItem>
+        )}
+      ></FlatList>
       <Text style={styles.separator}> </Text>
-
       <View
         style={{
           flexDirection: "row",
@@ -30,25 +22,9 @@ export default function DishDetailScreen() {
           justifyContent: "center",
           marginTop: 50,
         }}
-      >
-        <AntDesign
-          name="minuscircleo"
-          size={60}
-          color={"black"}
-          onPress={handleMinus}
-        ></AntDesign>
-        <Text style={styles.quantity}>{quantity}</Text>
-        <AntDesign
-          name="pluscircleo"
-          size={60}
-          color={"black"}
-          onPress={handlePlus}
-        ></AntDesign>
-      </View>
+      ></View>
       <View style={styles.basket}>
-        <Text style={styles.basketDetail}>
-          Add {quantity} to basket (${getTotal()})
-        </Text>
+        <Text style={styles.basketDetail}>Create Order</Text>
       </View>
     </View>
   );
@@ -61,14 +37,13 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     padding: 15,
   },
-  title: {
+  name: {
     fontSize: 35,
     fontWeight: "bold",
-    marginVertical: 10,
   },
-  decription: {
-    fontSize: 16,
-    color: "grey",
+  title: {
+    fontWeight: "bold",
+    fontSize: 15,
   },
   separator: {
     marginVertical: 25,
@@ -90,6 +65,5 @@ const styles = StyleSheet.create({
     fontSize: 15,
     width: "50%",
     color: "white",
-    // strike sda
   },
 });
