@@ -1,10 +1,16 @@
-import { View, Text } from "react-native";
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import RestaurantDetailPage from "./screens/RestaurantDetailPage/RestaurantDetailPage";
 import HomeScreen from "./screens/HomeScreen/HomeScreen";
 import OrderDetailScreen from "./screens/OrderDetailScreen/OrderDetailScreen";
+
+// declare RootNavigator
 const Stack = createNativeStackNavigator();
+
+// declare HomeNavigator
+const HomeTab = createMaterialBottomTabNavigator();
+
 export default function Navigation() {
   return (
     <Stack.Navigator initialRouteName="HomeScreen">
