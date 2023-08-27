@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
+import { StatusBar } from "expo-status-bar";
 import HomeScreen from "./src/screens/HomeScreen/HomeScreen";
 import RestaurantDetailPage from "./src/screens/RestaurantDetailPage/RestaurantDetailPage";
-import { StatusBar } from "expo-status-bar";
 import DishDetailScreen from "./src/screens/DishDetailScreen/DishDetailScreen";
 import BasketScreen from "./src/screens/BasketScreen/BasketScreen";
 import OrderListItem from "./src/components/OrderListItem/OrderListItem";
