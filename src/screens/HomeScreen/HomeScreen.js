@@ -7,7 +7,7 @@ export default function HomeScreen() {
       style={styles.page}
       data={restaurants}
       renderItem={({ item }) => (
-        <RestaurantItem restaurants={item}></RestaurantItem>
+        <RestaurantItem restaurant={item}></RestaurantItem>
       )}
       showsVerticalScrollIndicator={false} // the disable of scroll
     ></FlatList>

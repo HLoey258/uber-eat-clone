@@ -3,29 +3,29 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/core";
 
-export default function RestaurantItem({ restaurants }) {
+export default function RestaurantItem({ restaurant }) {
   const navigation = useNavigation();
   const handlePress = () => {
-    navigation.navigate("Restaurant");
+    navigation.navigate("Restaurant", { id: restaurant.id }); // the second parameter is id
   };
   return (
     <Pressable onPress={handlePress} style={styles.restaurantContainer}>
       <Image
         source={{
-          uri: restaurants.image,
+          uri: restaurant.image,
         }}
         style={styles.image}
       ></Image>
       <View style={styles.row}>
         <View style={styles.restaurantDetail}>
-          <Text style={styles.title}>{restaurants.name}</Text>
+          <Text style={styles.title}>{restaurant.name}</Text>
           <Text style={styles.subtitle}>
-            $$ {restaurants.deliveryFee} &#8226; {restaurants.minDeliveryTime} -
-            {restaurants.maxDeliveryTime} minutes
+            $$ {restaurant.deliveryFee} &#8226; {restaurant.minDeliveryTime} -
+            {restaurant.maxDeliveryTime} minutes
           </Text>
         </View>
         <View style={styles.rating}>
-          <Text>{restaurants.rating}</Text>
+          <Text>{restaurant.rating}</Text>
         </View>
       </View>
     </Pressable>

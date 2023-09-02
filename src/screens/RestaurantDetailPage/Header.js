@@ -2,7 +2,9 @@ import { View, Text, Image } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import styles from "./styles";
+import { useNavigation } from "@react-navigation/native";
 export default function Header({ restaurant }) {
+  const navigation = useNavigation();
   return (
     <View>
       <Image
@@ -17,6 +19,9 @@ export default function Header({ restaurant }) {
           size={35}
           color={"white"}
           style={styles.imageIcon}
+          onPress={() => {
+            navigation.goBack();
+          }}
         ></Ionicons>
       </View>
 
