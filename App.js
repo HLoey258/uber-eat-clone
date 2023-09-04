@@ -11,6 +11,7 @@ import OrderDetailScreen from "./src/screens/OrderDetailScreen/OrderDetailScreen
 // React Navigator
 import { NavigationContainer } from "@react-navigation/native";
 import Navigation from "./src/Navigation";
+import BasketDishItem from "./src/components/BasketDishItem/BasketDishItem";
 export default function App() {
   return (
     <NavigationContainer>
@@ -18,6 +19,7 @@ export default function App() {
       {/* <RestaurantDetailPage></RestaurantDetailPage> */}
       {/* <DishDetailScreen></DishDetailScreen> */}
       {/* <BasketScreen></BasketScreen> */}
+      {/* <BasketDishItem></BasketDishItem> */}
       {/* <OrderListItem></OrderListItem> */}
       {/* <OrderList></OrderList> */}
       {/* <OrderDetailScreen></OrderDetailScreen>

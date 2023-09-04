@@ -1,10 +1,13 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, Pressable } from "react-native";
 import React from "react";
 import Separator from "../Separator";
+import { useNavigation } from "@react-navigation/native";
 
 export default function OrderListItem({ order }) {
+  const navigation = useNavigation();
   return (
-    <View
+    <Pressable
+      onPress={() => navigation.navigate("OrderDetail")}
       style={{ flexDirection: "row", marginBottom: 15, alignItems: "center" }}
     >
       <Image
@@ -23,6 +26,6 @@ export default function OrderListItem({ order }) {
         </Text>
         <Separator></Separator>
       </View>
-    </View>
+    </Pressable>
   );
 }

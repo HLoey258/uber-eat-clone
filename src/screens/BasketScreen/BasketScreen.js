@@ -3,7 +3,7 @@ import React from "react";
 import restaurants from "../../../assets/data/restaurants.json";
 import BasketDishItem from "../../components/BasketDishItem/BasketDishItem";
 const restaurant = restaurants[0];
-export default function DishDetailScreen() {
+export default function BasketScreen() {
   return (
     <View style={styles.page}>
       <Text style={styles.name}>{restaurant.name}</Text>

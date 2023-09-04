@@ -6,27 +6,26 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import RestaurantDetailPage from "./screens/RestaurantDetailPage/RestaurantDetailPage";
 import HomeScreen from "./screens/HomeScreen/HomeScreen";
 import OrderDetailScreen from "./screens/OrderDetailScreen/OrderDetailScreen";
+import DishDetailScreen from "./screens/DishDetailScreen/DishDetailScreen";
+import OrderList from "./screens/OrderList/OrderList";
 
 // importing icon
 import { Foundation, FontAwesome5, MaterialIcons } from "@expo/vector-icons";
+import BasketScreen from "./screens/BasketScreen/BasketScreen";
 
 // declare RootNavigator which is stack navigate
 const Stack = createNativeStackNavigator();
 
-// declare HomeNavigator which is Tab navigate
-const Tab = createMaterialBottomTabNavigator();
-
 const Navigation = () => {
   return (
-    <Stack.Navigator initialRouteName="HomeScreen">
+    <Stack.Navigator
+      initialRouteName="HomeScreen"
+      screenOptions={{ headerShown: false }}
+    >
       <Stack.Screen
-        name="HomeScreen"
-        component={HomeTab} // nesting bottom navigate in navigate
-        options={{ headerShown: false }}
-      ></Stack.Screen>
-      <Stack.Screen
-        name="OrderScreen"
-        component={OrderDetailScreen}
+        name="HomeTabs"
+        component={HomeTabs}
+        // nesting bottom navigate in navigate
       ></Stack.Screen>
       <Stack.Screen
         name="Restaurant"
@@ -37,7 +36,10 @@ const Navigation = () => {
   );
 };
 
-const HomeTab = () => {
+// declare HomeNavigator which is Tab navigate
+const Tab = createMaterialBottomTabNavigator();
+
+const HomeTabs = () => {
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -47,7 +49,7 @@ const HomeTab = () => {
     >
       <Tab.Screen
         name="Home"
-        component={HomeScreen}
+        component={HomeStackNavigation}
         options={{
           tabBarIcon: ({ color }) => (
             <Foundation name="home" size={24} color={color}></Foundation>
@@ -56,7 +58,7 @@ const HomeTab = () => {
       ></Tab.Screen>
       <Tab.Screen
         name="Order"
-        component={OrderDetailScreen}
+        component={OrderStackNavigation}
         options={{
           tabBarIcon: ({ color }) => (
             <MaterialIcons
@@ -81,6 +83,46 @@ const HomeTab = () => {
         }}
       ></Tab.Screen>
     </Tab.Navigator>
+  );
+};
+
+const HomeStack = createNativeStackNavigator();
+const HomeStackNavigation = () => {
+  // this is big Navigation contain all bottom and stack navigate
+  return (
+    <HomeStack.Navigator>
+      <HomeStack.Screen name="Home" component={HomeScreen}></HomeStack.Screen>
+
+      <HomeStack.Screen
+        name="Restaurant"
+        component={RestaurantDetailPage}
+        options={{ headerShown: false }}
+      ></HomeStack.Screen>
+      <HomeStack.Screen
+        name="Dish"
+        component={DishDetailScreen}
+      ></HomeStack.Screen>
+      <HomeStack.Screen
+        name="Basket"
+        component={BasketScreen}
+      ></HomeStack.Screen>
+    </HomeStack.Navigator>
+  );
+};
+
+const OrderStack = createNativeStackNavigator();
+const OrderStackNavigation = () => {
+  return (
+    <OrderStack.Navigator>
+      <OrderStack.Screen
+        name="OrderList"
+        component={OrderList}
+      ></OrderStack.Screen>
+      <OrderStack.Screen
+        name="OrderDetail"
+        component={OrderDetailScreen}
+      ></OrderStack.Screen>
+    </OrderStack.Navigator>
   );
 };
 

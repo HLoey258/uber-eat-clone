@@ -1,12 +1,14 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Pressable } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 import restaurants from "../../../assets/data/restaurants.json";
 
 const dishes = restaurants[0].dishes[0];
 
 export default function DishDetailScreen() {
+  const navigation = useNavigation();
   // function handle plus and minus button
   const [quantity, setQuantity] = useState(0);
   const handlePlus = () => {
@@ -48,9 +50,11 @@ export default function DishDetailScreen() {
         ></AntDesign>
       </View>
       <View style={styles.basket}>
-        <Text style={styles.basketDetail}>
-          Add {quantity} to basket (${getTotal()})
-        </Text>
+        <Pressable onPress={() => navigation.navigate("Basket")}>
+          <Text style={styles.basketDetail}>
+            Add {quantity} to basket (${getTotal()})
+          </Text>
+        </Pressable>
       </View>
     </View>
   );
