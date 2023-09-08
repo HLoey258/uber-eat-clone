@@ -3,15 +3,15 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 
 // importingg Screens
-import RestaurantDetailPage from "./screens/RestaurantDetailPage/RestaurantDetailPage";
-import HomeScreen from "./screens/HomeScreen/HomeScreen";
-import OrderDetailScreen from "./screens/OrderDetailScreen/OrderDetailScreen";
-import DishDetailScreen from "./screens/DishDetailScreen/DishDetailScreen";
-import OrderList from "./screens/OrderList/OrderList";
+import RestaurantDetailPage from "../screens/RestaurantDetailPage/RestaurantDetailPage";
+import HomeScreen from "../screens/HomeScreen/HomeScreen";
+import OrderDetailScreen from "../screens/OrderDetailScreen/OrderDetailScreen";
+import DishDetailScreen from "../screens/DishDetailScreen/DishDetailScreen";
+import OrderList from "../screens/OrderList/OrderList";
 
 // importing icon
 import { Foundation, FontAwesome5, MaterialIcons } from "@expo/vector-icons";
-import BasketScreen from "./screens/BasketScreen/BasketScreen";
+import BasketScreen from "../screens/BasketScreen/BasketScreen";
 
 // declare RootNavigator which is stack navigate
 const Stack = createNativeStackNavigator();

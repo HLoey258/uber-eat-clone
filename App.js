@@ -10,7 +10,7 @@ import OrderDetailScreen from "./src/screens/OrderDetailScreen/OrderDetailScreen
 
 // React Navigator
 import { NavigationContainer } from "@react-navigation/native";
-import Navigation from "./src/Navigation";
+import Navigation from "./src//navigation/Navigation";
 import BasketDishItem from "./src/components/BasketDishItem/BasketDishItem";
 export default function App() {
   return (
