@@ -11,7 +11,7 @@ import config from "./src/aws-exports";
 // import Authenticator
 import { withAuthenticator } from "aws-amplify-react-native";
 
-Amplify.configure(config); // this line help to connect with back-end
+Amplify.configure({ ...config, Analytics: { disable: true } }); // this line help to connect with back-end + fixing error code 500
 function App() {
   return (
     <NavigationContainer>

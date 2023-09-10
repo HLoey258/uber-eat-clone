@@ -1,6 +1,6 @@
 import { View, Text, Image, Pressable } from "react-native";
 import React from "react";
-import Separator from "../Separator";
+
 import { useNavigation } from "@react-navigation/native";
 
 export default function OrderListItem({ order }) {
@@ -24,7 +24,6 @@ export default function OrderListItem({ order }) {
         <Text style={{ fontSize: 14, color: "grey" }}>
           2 days ago &#8226; {order.status}
         </Text>
-        <Separator></Separator>
       </View>
     </Pressable>
   );
