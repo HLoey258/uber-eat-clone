@@ -2,7 +2,7 @@
 
 # dependencies
 node_modules/
-
+src/aws-exports/
 # Expo
 .expo/
 dist/

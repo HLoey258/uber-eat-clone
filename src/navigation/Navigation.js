@@ -1,4 +1,5 @@
 import React from "react";
+// importing react native navigation
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 
@@ -12,11 +13,24 @@ import OrderList from "../screens/OrderList/OrderList";
 // importing icon
 import { Foundation, FontAwesome5, MaterialIcons } from "@expo/vector-icons";
 import BasketScreen from "../screens/BasketScreen/BasketScreen";
+import Profile from "../screens/ProfileScreen";
 
 // declare RootNavigator which is stack navigate
 const Stack = createNativeStackNavigator();
 
+// the logic is
+// Navigation { -> stack navigation
+//   HomeTabs{  -> bottom navigation
+//     bottom navigation {
+//       home: home screen navigation,
+//       order: order screen navigation,
+//       profile: profile screen,
+//     }
+//   }
+// }
+
 const Navigation = () => {
+  // main navigation
   return (
     <Stack.Navigator
       initialRouteName="HomeScreen"
@@ -36,9 +50,9 @@ const Navigation = () => {
   );
 };
 
-// declare HomeNavigator which is Tab navigate
+// declare HomeNavigator which is bottom navigation
+// this navigation display in all screens
 const Tab = createMaterialBottomTabNavigator();
-
 const HomeTabs = () => {
   return (
     <Tab.Navigator
@@ -71,7 +85,7 @@ const HomeTabs = () => {
       ></Tab.Screen>
       <Tab.Screen
         name="Profile"
-        component={OrderDetailScreen}
+        component={Profile}
         options={{
           tabBarIcon: ({ color }) => (
             <FontAwesome5
@@ -85,14 +99,12 @@ const HomeTabs = () => {
     </Tab.Navigator>
   );
 };
-
+// home -> restaurant -> dish -> basket
 const HomeStack = createNativeStackNavigator();
 const HomeStackNavigation = () => {
-  // this is big Navigation contain all bottom and stack navigate
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen name="Home" component={HomeScreen}></HomeStack.Screen>
-
       <HomeStack.Screen
         name="Restaurant"
         component={RestaurantDetailPage}
