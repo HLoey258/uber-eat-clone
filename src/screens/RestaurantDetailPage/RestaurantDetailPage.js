@@ -6,6 +6,10 @@ import Header from "./Header";
 import styles from "./styles";
 import { useRoute } from "@react-navigation/native";
 const restaurant = restaurants[0];
+
+// fetching data
+import { DataStore } from "aws-amplify";
+
 export default function RestaurantDetailPage() {
   const route = useRoute();
 
